@@ -1,0 +1,38 @@
+OnVisible -> Screen -> Collect(InvoiceLines, { LineNbr: 1 } );
+Add Button -> Click Button -> Onselect == declare variable to store number of lines -> Set(TotLines, TotLines+1);
+Collect(InvoiceLines, 
+{
+    LineNbr:TotLines
+}
+);
+
+
+
+
+
+Reset Button
+OnSelect ->> 
+Collect(InvoiceLines, 
+{
+     LineNbr:1
+}
+);
+
+
+Submit Button
+
+OnSelect ->>
+
+ForAll(
+    Gallery1.AllItems,
+    Collect(FinalInvoiceLines,{ItemDesc: Item.Text, AmtCharged: Amt.Text})
+    );
+Navigate(ScreenName)
+
+
+Make New Screen
+Add Data Table
+Connect previous 
+Edit fields
+
+
