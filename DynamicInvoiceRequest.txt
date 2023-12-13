@@ -34,5 +34,39 @@ Make New Screen
 Add Data Table
 Connect previous 
 Edit fields
+s
+
+Sum all the dynamic fields in item details
+Sum(Gallery1.AllItems, Value(Amt.Text))
 
 
+Use Patch function to parse data from power apps to sharepoint list
+
+
+Patch(PAInvoice, Defaults(PAInvoice),{Title:submittedby.Text}) // I just pushed the name here
+
+
+Dynamically sum columns and rows example
+blank data a
+
+    Sum(
+        Value(reg1.Text),
+        Value(tra1.Text),
+        Value(acc1.Text),
+        Value(bre1.Text),
+        Value(lun1.Text),
+        Value(din1.Text),
+        Value(taxi1.Text),
+        Value(sun1.Text)
+    )
+
+
+
+CREATE PDF generator in powerapps
+
+-> settings _> enable PDFexperimenal feature
+-> make another screem
+-> insert container in screem
+-> adde elements in that container
+-> media -> PDF Viewer ->> Document ->> VarPDF or any variable name
+-> Submit button ->>>> Set(varPDF, PDF(ContainerName))
