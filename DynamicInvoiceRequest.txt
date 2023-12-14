@@ -39,6 +39,9 @@ s
 Sum all the dynamic fields in item details
 Sum(Gallery1.AllItems, Value(Amt.Text))
 
+In the flow put this in file name after powerapps v2  input file content as trigger
+triggerBody()?['file']?['filename']
+
 
 Use Patch function to parse data from power apps to sharepoint list
 
@@ -70,3 +73,8 @@ CREATE PDF generator in powerapps
 -> adde elements in that container
 -> media -> PDF Viewer ->> Document ->> VarPDF or any variable name
 -> Submit button ->>>> Set(varPDF, PDF(ContainerName))
+
+
+
+after powerapps v2 file content as trigger put this a s file name when creating file
+triggerBody()?['file']?['name']
