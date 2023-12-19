@@ -1,0 +1,30 @@
+Make an Active Directory Steps 
+
+
+-> query the users from AAD
+-> limit it to just 6 results
+-> text input label is textinput1
+Office365Users.SearchUserV2({searchTerm: TextInput1.Text, top:6}).value
+
+
+Query the image in apps
+Go to image function
+add
+If(!IsBlank(ThisItem.Mail),If(Office365Users.UserPhotoMetadata(ThisItem.Mail).HasPhoto=true,Office365Users.UserPhotoV2(ThisItem.Mail),user))
+user is an image added on media
+
+Onselect ->
+
+UpdateContext({varSelectedPerson:ThisItem})
+
+
+go to text input
+defult ->
+
+varSelectedPerson.DisplayName
+
+
+Reset Text inpt...
+Onselect ->
+
+Reset(TextInput1);UpdateContext({varSelectedPerson:Blank()})
