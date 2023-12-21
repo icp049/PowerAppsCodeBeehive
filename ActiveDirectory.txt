@@ -28,3 +28,5 @@ Reset Text inpt...
 Onselect ->
 
 Reset(TextInput1);UpdateContext({varSelectedPerson:Blank()})
+
+//use this to build an ctive directory component that can be placed nywhere in app
