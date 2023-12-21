@@ -78,3 +78,22 @@ CREATE PDF generator in powerapps
 
 after powerapps v2 file content as trigger put this a s file name when creating file
 triggerBody()?['file']?['name']
+
+
+Create a data table inside a container for pdf generator
+add container
+add label
+select lebel
+add data table(preview)
+
+
+
+git add --all
+git commit -m "Your comment"
+git merge master
+git checkout master
+git merge development
+git checkout development
+git push --all origin
+
+drush cr
