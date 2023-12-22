@@ -1,0 +1,129 @@
+Dynamic Forms Function Codes
+
+Navigate to other screen
+Component: Button
+Function: OnSelect
+Code:
+
+Navigate(ScreenName)
+
+
+Add Button to Add Inputs
+Component: Screen
+Function: OnVisible
+Code: 
+
+Collect(InvoiceLines, { LineNbr: 1 } );
+
+
+Component: Button
+Function: OnSelect
+Code:
+
+ Set(TotLines, TotLines+1);
+//Trigger increments
+
+
+
+Collect(InvoiceLines, 
+{
+    LineNbr:TotLines
+}
+);
+
+
+Reset Buttons
+
+Component: Button
+Function: OnSelect
+Code:
+
+Collect(InvoiceLines, 
+{
+     LineNbr:1
+}
+);
+
+Reset Fields
+Component: Button
+Function: OnSelect
+Code:
+
+Reset(InputLabel)
+
+
+Collect Data Inside Dynamic Gallery and Parse it into a Data Table (Preview)
+Component: Button
+Function: OnSelect
+Code: 
+
+ForAll(
+    GalleryName.AllItems,
+    Collect(FinalInvoiceLines,{ColName: LabelName.Text, Colname: LabelName.Text})
+    );
+
+
+Create a Data Table Preview
+Add New Data Table(Preview)
+Connect Previous Data //Finalinvoicelines above for example
+Edit fields to show fields or columns
+//If you want to put data table inside a container, there is a work around. Add container, add label, select label then add data table, after that, delete label. The data table should be inside the container now. 
+
+
+SUm of all the DYNAMIC fields in a Dynamic Gallery
+Sum(GalleryName.AllItems, Value(labelName.Text))
+
+
+USE POWERAPPS AS A TRIGGER
+In the flow (created from within powerapps) put this in file name after powerapps v2  input file content as trigger
+Code:
+
+triggerBody()?['file']?['name']
+//There is 3 dotted menu in your flow, click that, u should see "PEEK CODE", find triggerBody()?['file']?['ContenTBytes'] and replace it with triggerBody()?['file']?['name']
+
+
+
+
+Use Patch function to parse data from power apps to sharepoint list
+Connect Sharepoint first as a connector ten find your listName
+Code:
+Patch(ListName, Defaults(ListName),{Title:submittedby.Text, //add other here}) // I just pushed the name here
+
+
+Dynamically sum columns and rows example
+blank data a
+
+    Sum(
+        Value(reg1.Text),
+        Value(tra1.Text),
+        Value(acc1.Text),
+        Value(bre1.Text),
+        Value(lun1.Text),
+        Value(din1.Text),
+        Value(taxi1.Text),
+        Value(sun1.Text)
+    )
+
+
+
+CREATE PDF generator in powerapps
+
+-> settings _> enable PDFexperimenal feature
+-> make another screen
+-> insert container in screen
+-> adde elements in that container
+-> media -> PDF Viewer ->> Document ->> VarPDF or any variable name
+-> Submit button ->>>> Set(varPDF, PDF(ContainerName))
+
+
+
+
+
+
+
+
+
+
+
+
+
