@@ -1,0 +1,7 @@
+Validation for SUbmit Button to Activate
+Go to DisplayMode
+If(
+    !IsBlank(prsubmittedby.Text) && !IsBlank(prpayment.Text) && !IsBlank(prtotal.Text) && !IsBlank(prreason.Text),
+    DisplayMode.Edit,
+    DisplayMode.Disabled
+)
