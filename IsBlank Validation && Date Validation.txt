@@ -1,0 +1,15 @@
+If(
+    IsBlank(date.SelectedDate) || IsBlank(destination.Text) || IsBlank(purposetravel.Text) || IsBlank(depdate.SelectedDate) || IsBlank(retdate.SelectedDate),
+    Notify(
+        "Please enter values in all required fields.",
+        NotificationType.Error
+    ),
+    If(
+        retdate.SelectedDate < depdate.SelectedDate,
+        Notify(
+            "Return date cannot be before departure date.",
+            NotificationType.Error
+        ),
+        Navigate(ExpenseReportPDF)
+    )
+)
