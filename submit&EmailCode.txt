@@ -1,0 +1,50 @@
+Patch(
+    PaymentRequest,
+    Defaults(PaymentRequest),
+    {
+        Title: prsubmittedby.Text,
+        Payment: prpayment.Text,
+        Reason: prreason.Text,
+        Total: prtotal.Text,
+        Date: prdate.SelectedDate
+    }
+);
+
+// Generate PDF and store it in a variable
+Set(varPDF, PDF(PaymentRequestContainer));
+
+// Set a dynamic file name for the PDF
+Set(
+    dynamicFileName,
+    Concatenate(
+        User().FullName,
+        Text(Now(), "yyyymmdd"),
+        Text(Rand() * 90000 + 10000, "0")
+    ) & ".pdf"
+);
+
+// Send an email with the attached PDF using Office 365 Outlook connector
+Office365Outlook.SendEmailV2(
+    "iadekoya@reginalibrary.ca;" & User().Email ,
+    "Payment Request from " & User().FullName,
+    "This Email contains a payment request form sent to sender and receiver",
+    {
+        Attachments: [
+            {
+                Name: dynamicFileName,
+                ContentBytes: varPDF
+            }
+        ],
+        Importance: "Normal"
+    }
+);
+
+
+
+Navigate(PaymentRequestSuccess);
+
+Reset(prdate);
+Reset(prsubmittedby);
+Reset(prpayment);
+Reset(prreason);
+Reset(prtotal);
