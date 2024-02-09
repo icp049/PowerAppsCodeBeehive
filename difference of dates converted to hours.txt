@@ -1,0 +1,1 @@
+(DateDiff(depdate.SelectedDate, retdate.SelectedDate) + 1) * 7.25 & " hrs"
