@@ -1,0 +1,7 @@
+-> Create Screen as background
+-> Modify fill opacity to 0.5 or add image
+-> Add rectangle or button
+-> Add close button
+-> Group elements and "Modal"
+-> Set visilibility of "Modal" to varShowModal
+-> Update button codes to OnSelect -> UpdateContext({varshowModal:!varshowModal})
