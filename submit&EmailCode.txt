@@ -49,4 +49,4 @@ Reset(prdate);
 Reset(prsubmittedby);
 Reset(prpayment);
 Reset(prreason);
-Reset(prtotal);
+Reset(prtotal); //
