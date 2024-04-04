@@ -1,0 +1,17 @@
+If(Button1Selected, DisplayMode.Edit, DisplayMode.Disabled)
+-> submt displayMode
+
+
+Set(Button1Selected, true);
+-> generate pdf button 
+
+
+loading screen
+
+Visivlble -> isLoading 
+
+Action Button
+Onselect 
+
+Set(isLoading, true);
+Set(isLoading, false);
