@@ -1,0 +1,24 @@
+SUbmit -> OnSelect ->
+
+ UpdateContext({
+    varErrorMessage: If(
+        IsBlank(input1.Text),
+       true,
+       false
+    )
+})
+
+
+
+TextInput -> Border Color -> 
+
+
+If(varErrorMessage, 
+RGBA(255, 0, 0, 1),
+RGBA(0, 18, 107, 1))
+
+
+Error Message -> Label Text -> Visible
+
+
+varErrorMessage
