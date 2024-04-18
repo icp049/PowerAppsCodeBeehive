@@ -82,6 +82,14 @@ show id
 
 
 
+Update item will create an infinite loop 
+employ condition at start of flow
+create column named isUpdated and set default value to No
+condition -> If isUpdated id equald sto TRUE OR FALSE 
+then after update loop in update item update isUpdated to TRUE or YES
+
+
+
 
 
 
