@@ -89,6 +89,9 @@ condition -> If isUpdated id equald sto TRUE OR FALSE
 then after update loop in update item update isUpdated to TRUE or YES
 
 
+NOTE: WHEn displaying the list rtto gallery put .full in image property in advanced 
+
+
 
 
 
