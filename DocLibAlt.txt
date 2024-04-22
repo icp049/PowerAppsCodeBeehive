@@ -1,0 +1,28 @@
+Use documentlib as backend
+
+
+App
+Make gallery
+Connect top data source
+
+Gallery -> Onselect 
+
+Set(varDocumentCurrent, URL.Run(Gallery2.Selected.Identifier).result)
+
+PDFViewer
+Document 
+
+varDocumentCurrent
+
+
+Flow from inside
+
+
+powerapps v2 -> Add input -> name it DocIdentifier
+Get File content -> put site address ... File Identifier -> DocIdentifier
+Compose -> datauri(base64ToBinary(body('Get_file_content')?['$content']))
+Respond to a flow ->Add ioutput -> name it Result -> Outputs
+
+
+// Put image
+Gallery1.Selected.Image.Full
