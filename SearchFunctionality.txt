@@ -1,0 +1,23 @@
+//Quick Search
+
+Filter(
+	BannedClientsDocLib,
+	search.Text in 'Client Name'
+
+)
+
+//Advanced Filters
+
+If(
+    IsBlank(date1.SelectedDate) || IsBlank(date2.SelectedDate),
+    Filter(
+        BannedClientsDocLib,
+        StartsWith('Client Name', search_1.Text)
+    ),
+    Filter(
+        BannedClientsDocLib,
+        StartsWith('Client Name', search_1.Text) ||
+        'Banned Until' >= date1.SelectedDate,
+        'Banned Until' <= date2.SelectedDate
+    )
+)
