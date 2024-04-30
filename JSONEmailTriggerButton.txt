@@ -1,0 +1,15 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "button",
+  "txtContent": "Publish to Teams",
+  "customRowAction": {
+    "action": "executeFlow",
+    "actionParams": "{\"id\": \"021ec4e0-8f85-46b3-a557-a4456960a4eb\",\"headerText\":\"All Things REI\",\"runFlowButtonText\":\"Publish Now\"}"
+  },
+  "style": {
+    "background-color": "#008082",
+    "color": "white",
+    "border-radius": "0 15px",
+    "visibility": "=if(([$PublishedToTeams] == 'Yes'),'hidden','visible')"
+  }
+}
