@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "style": {
+    "visibility": "=if([$PermMask]>='0xb00','hidden','visible')"
+  },
+  "txtContent": "=if([$PermMask]>='0xb00','read-only','more than read')"
+}
