@@ -1,0 +1,50 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/column-formatting.schema.json",
+  "elmType": "span",
+   "style": {
+        "min-width": "250px"
+      },
+   "children": [
+   {
+      "elmType": "button",
+      "txtContent": "Edit",
+      "style": {
+        "border": "none",
+		"background-color": "#ca5010",  
+        "border-color":"#ca5010",
+        "height":"32px",          
+		"color": "#ffffff",    
+		"cursor": "pointer",
+        "min-width": "80px"
+      },
+       "customRowAction": {
+        "action": "editProps"
+        }
+    },
+     {
+      "elmType": "span",
+      "attributes": {
+        "iconName": "Separator"
+      },
+      "style":{
+          "height":"12px"
+      }
+    },
+    {
+      "elmType": "button",
+      "txtContent": "Delete",
+      "style": {
+        "border": "none",
+		"background-color": "#ca5010",  
+        "border-color":"#ca5010", 
+        "height":"32px",     
+		"color": "#ffffff",    
+		"cursor": "pointer",
+        "min-width": "80px"
+      },
+       "customRowAction": {
+        "action": "delete"
+        }
+    }
+  ]
+}
