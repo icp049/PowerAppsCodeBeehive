@@ -1,0 +1,12 @@
+// Button
+
+UpdateContext({varCreatedSort:!varCreatedSort})
+
+
+//Gallery 
+
+If(
+    varCreatedSort = true,
+    SortByColumns(SuspendedClientsLib, "Created", SortOrder.Ascending),
+    SortByColumns(SuspendedClientsLib, "Created", SortOrder.Descending)
+)
