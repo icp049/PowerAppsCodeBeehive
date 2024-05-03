@@ -1,50 +1,100 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/sp/column-formatting.schema.json",
   "elmType": "span",
-   "style": {
-        "min-width": "250px"
-      },
-   "children": [
-   {
+  "style": {
+    "min-width": "250px"
+  },
+  "children": [
+    {
       "elmType": "button",
-      "txtContent": "Edit",
-      "style": {
-        "border": "none",
-		"background-color": "#ca5010",  
-        "border-color":"#ca5010",
-        "height":"32px",          
-		"color": "#ffffff",    
-		"cursor": "pointer",
-        "min-width": "80px"
+      "txtContent": "=if([$PermMask]>='0xb00','read-only','New Ban')",
+      "customRowAction": {
+        "action": "executeFlow",
+        "actionParams": "{\"id\": \"7c22f238-20b0-4c91-9164-f6a4370045df\",\"headerText\":\"Email Front Staff\",\"runFlowButtonText\":\"Send\"}"
       },
-       "customRowAction": {
-        "action": "editProps"
-        }
+      "style": {
+        "background-color": "#D8513B",
+        "color": "white",
+        "border-radius": "0 15px",
+        "visibility": "=if([$PermMask]>='0xb00','hidden','visible')",
+        "cursor": "pointer",
+        "font-weight": "=if([$PermMask]>='0xb00','normal','bold')"
+      }
     },
-     {
+	{
       "elmType": "span",
       "attributes": {
         "iconName": "Separator"
       },
-      "style":{
-          "height":"12px"
+      "style": {
+        "height": "12px"
       }
     },
     {
       "elmType": "button",
-      "txtContent": "Delete",
-      "style": {
-        "border": "none",
-		"background-color": "#ca5010",  
-        "border-color":"#ca5010", 
-        "height":"32px",     
-		"color": "#ffffff",    
-		"cursor": "pointer",
-        "min-width": "80px"
+      "txtContent": "=if([$PermMask]>='0xb00','read-only','Lift Ban')",
+      "customRowAction": {
+        "action": "executeFlow",
+        "actionParams": "{\"id\": \"91ea9cf5-8a4e-43de-a8f9-a18bef20740f\",\"headerText\":\"Email Front Staff\",\"runFlowButtonText\":\"Send\"}"
       },
-       "customRowAction": {
-        "action": "delete"
-        }
+      "style": {
+        "background-color": "#41B075",
+        "color": "white",
+        "border-radius": "0 15px",
+        "visibility": "=if([$PermMask]>='0xb00','hidden','visible')",
+        "cursor": "pointer",
+        "font-weight": "=if([$PermMask]>='0xb00','normal','bold')"
+      }
+    },
+	{
+      "elmType": "span",
+      "attributes": {
+        "iconName": "Separator"
+      },
+      "style": {
+        "height": "12px"
+      }
+    },
+    {
+      "elmType": "button",
+      "txtContent": "=if([$PermMask]>='0xb00','read-only','ServiceDesk (Ban)')",
+      "customRowAction": {
+        "action": "executeFlow",
+        "actionParams": "{\"id\": \"9c116a23-a6b3-44d1-98d5-fb5c94c6e4ca\",\"headerText\":\"Email IT\",\"runFlowButtonText\":\"Send\"}"
+      },
+      "style": {
+        "background-color": "#0E7ACA",
+        "color": "white",
+        "border-radius": "7px",
+        "visibility": "=if([$PermMask]>='0xb00','hidden','visible')",
+        "cursor": "pointer",
+        "font-weight": "=if([$PermMask]>='0xb00','normal','bold')"
+      }
+    },
+    {
+      "elmType": "span",
+      "attributes": {
+        "iconName": "Separator"
+      },
+      "style": {
+        "height": "12px"
+      }
+    },
+    {
+      "elmType": "button",
+      "txtContent": "=if([$PermMask]>='0xb00','read-only','ServiceDesk (Unban)')",
+      "customRowAction": {
+        "action": "executeFlow",
+        "actionParams": "{\"id\": \"26757da1-aeea-4a79-9986-09fc1c1396d4\",\"headerText\":\"Email IT\",\"runFlowButtonText\":\"Send\"}"
+      },
+      "style": {
+        "background-color": "#288588",
+        "color": "white",
+        "border-radius": "7px",
+        "visibility": "=if([$PermMask]>='0xb00','hidden','visible')",
+        "cursor": "pointer",
+        "font-weight": "=if([$PermMask]>='0xb00','normal','bold')"
+      }
     }
   ]
 }
