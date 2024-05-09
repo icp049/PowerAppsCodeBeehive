@@ -1,0 +1,16 @@
+If(
+    IsBlank(date1.SelectedDate) || IsBlank(date2.SelectedDate) || IsBlank(Dropdown1.Selected.Value),
+    Filter(
+        SuspendedClientsLib,
+        Location.Value = Dropdown1.Selected.Value &&
+        (search_1.Text in 'Client Name' || search_1.Text in 'Library Card Number') 
+    ),
+
+    Filter(
+        SuspendedClientsLib,
+        Location.Value = Dropdown1.Selected.Value &&
+        (search_1.Text in 'Client Name' || search_1.Text in 'Library Card Number') &&
+        ('Suspended Until' >= DateValue(date1.SelectedDate)) &&
+        ('Suspended Until' <= DateValue(date2.SelectedDate)) 
+    )
+)
