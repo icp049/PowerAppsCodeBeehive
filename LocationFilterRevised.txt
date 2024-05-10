@@ -1,0 +1,22 @@
+If(
+    Dropdown1.Selected.Value = "", // Check if Dropdown1 is empty
+    Filter(
+        SuspendedClientsLib,
+        (search_1.Text in 'Client Name' || search_1.Text in 'Library Card Number')
+    ),
+    If(
+        IsBlank(date1.SelectedDate) || IsBlank(date2.SelectedDate),
+        Filter(
+            SuspendedClientsLib,
+            'Location '.Value = Dropdown1.Selected.Value &&
+            (search_1.Text in 'Client Name' || search_1.Text in 'Library Card Number') 
+        ),
+        Filter(
+            SuspendedClientsLib,
+            'Location '.Value = Dropdown1.Selected.Value &&
+            (search_1.Text in 'Client Name' || search_1.Text in 'Library Card Number') &&
+            ('Suspended Until (MM/DD/YYYY)' >= DateValue(date1.SelectedDate)) &&
+            ('Suspended Until (MM/DD/YYYY)' <= DateValue(date2.SelectedDate)) 
+        )
+    )
+)
