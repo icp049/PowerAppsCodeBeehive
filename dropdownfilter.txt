@@ -1,0 +1,12 @@
+Gallery Code:
+
+
+If(
+    filterdropdown.Selected.Value = "Newest",
+    SortByColumns(SuspendedClientsLib, "Created", SortOrder.Descending),
+    SortByColumns(SuspendedClientsLib, "Created", SortOrder.Ascending)
+)
+
+
+Button Code:
+Items -> [Newest, Oldest]
