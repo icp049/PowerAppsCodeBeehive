@@ -1,0 +1,36 @@
+Suspended Letter Button Code:
+
+
+Set(varDocumentCurrent, URL.Run(Gallery2.Selected.Identifier).result); // run the flow to get document and show it to the PDF viewer
+
+
+UpdateContext({varshowModal:!varshowModal}) // show the modal
+
+
+PDFViewer
+Document -> varCurrentDocument
+
+FLOW:
+Apps V2
+input-> DocIdentifier
+
+Get File Content
+File Identifier = DocIdentifier
+
+COmpose 
+
+datauri(base64ToBinary(body('Get_file_content')?['$content']))
+
+Code Peek:
+
+{
+    "inputs": "@datauri(base64ToBinary(body('Get_file_content')?['$content']))",
+    "metadata": {
+        "operationMetadataId": "456eff1f-6d59-4347-8740-7f9fe8a5a7dc"
+    }
+}
+
+Respond to Power App or flow
+
+Result -> Outputs
+
