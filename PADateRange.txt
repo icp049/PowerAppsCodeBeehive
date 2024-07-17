@@ -1,0 +1,2 @@
+//DateRange PowerAutomate
+<p class="editor-paragraph">@{body('Get_file_properties')?['ClientName']} is suspended from all RPL properties for the period of @{div(sub(ticks(body('Get_file_properties')?['BannedUntil']), ticks(body('Get_file_properties')?['DateOfIncidence'])), 864000000000) } days starting from @{body('Get_file_properties')?['BannedUntil']}</p><br><br><br>
