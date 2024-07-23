@@ -1,0 +1,81 @@
+
+
+trigger
+get file properties
+get file content
+send an http request to sharepoint
+
+_api/lists/getbytitle('SuspendedClientsLib')/items(@{body('Get_file_properties')?['ID']})?$select=Image --> ID from get file properties
+
+parse JSON
+Content: Body from HTTP request
+
+{
+    "type": "object",
+    "properties": {
+        "d": {
+            "type": "object",
+            "properties": {
+                "Image": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
+
+ParseJSON again
+Content: Body Image
+{
+    "type": "object",
+    "properties": {
+        "fileName": {
+            "type": "string"
+        },
+        "serverRelativeUrl": {
+            "type": "string"
+        },
+        "id": {
+            "type": "string"
+        },
+        "serverUrl": {
+            "type": "string"
+        },
+        "thumbnailRenderer": {}
+    }
+}
+
+
+Send Email 
+
+get Dynamic or Body serverURL, Body serverRelativeURL
+
+
+All of the schema can be seen in the otputs of each successful flow... you can copy that and then click on the formulate schema through that
+
+
+
+OPTIONAL: add attachment with the email
+
+Get file content 
+ion the attachment put File content in COntentBytes and use fileName from File properties
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//https://torbenp.com/2022/07/get-sharepoint-list-image-in-power-automate/?utm_source=rss&utm_medium=rss&utm_campaign=get-sharepoint-list-image-in-power-automate
