@@ -1,30 +1,53 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/sp/column-formatting.schema.json",
-  "elmType": "button",
-  "customRowAction": {
-    "action": "editProps"
-  },
-  "attributes": {
-    "class": "ms-fontColor-themePrimary ms-fontColor-themeDarker--hover"
-  },
+  "elmType": "span",
   "style": {
-    "border": "none",
-    "background-color": "transparent",
-    "cursor": "pointer"
+    "min-width": "250px"
   },
   "children": [
     {
-      "elmType": "span",
-      "attributes": {
-        "iconName": "Edit"
-      },
+      "elmType": "button",
+      "txtContent": "Edit",
       "style": {
-        "padding-right": "6px"
+        "border": "none",
+        "background-color": "#ca5010",
+        "border-color": "#ca5010",
+        "height": "32px",
+        "color": "#ffffff",
+        "cursor": "pointer",
+        "min-width": "80px",
+        "visibility": "=if([$PermMask]>='0xb00','hidden','visible')"
+      },
+      "customRowAction": {
+        "action": "editProps"
       }
     },
     {
       "elmType": "span",
-      "txtContent": "Edit"
+      "attributes": {
+        "iconName": "Separator"
+      },
+      "style": {
+        "height": "12px",
+        "visibility": "=if([$PermMask]>='0xb00','hidden','visible')"
+      }
+    },
+    {
+      "elmType": "button",
+      "txtContent": "Delete",
+      "style": {
+        "border": "none",
+        "background-color": "#ca5010",
+        "border-color": "#ca5010",
+        "height": "32px",
+        "color": "#ffffff",
+        "cursor": "pointer",
+        "min-width": "80px",
+        "visibility": "=if([$PermMask]>='0xb00','hidden','visible')"
+      },
+      "customRowAction": {
+        "action": "delete"
+      }
     }
   ]
 }
