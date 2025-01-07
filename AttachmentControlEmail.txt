@@ -1,0 +1,1 @@
+Office365Outlook.SendEmailV2("ipedeglorio@reginalibrary.ca", "hello", "hello", {Attachments: RenameColumns(AttachmentControl.Attachments, Value, ContentBytes) })
