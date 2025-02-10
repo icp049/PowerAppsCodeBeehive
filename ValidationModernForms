@@ -1,0 +1,67 @@
+#################VALIDATION FOR MODERN COMPONENTS ##########################
+
+
+### REVIEW BUTTON ####
+
+If(
+    IsBlank(payeeData.Value), 
+    Set(payeeError, true), 
+    Set(payeeError, false)
+);
+
+If(
+    IsBlank(paymentRequestToData.Value), 
+    Set(paymentrequesterror, true), 
+    Set(paymentrequesterror, false)
+);
+
+If(
+    IsBlank(postalCodeData.Value), 
+    Set(postalcodeerror, true), 
+    Set(postalcodeerror, false)
+);
+
+If(
+    IsBlank(reasonForPaymentData.Value), 
+    Set(paymentreasonerror, true), 
+    Set(paymentreasonerror, false)
+);
+
+If(
+    IsBlank(totalData.Value), 
+    Set(totalerror, true), 
+    Set(totalerror, false)
+);
+
+If(
+    payeeError || paymentrequesterror || postalcodeerror || paymentreasonerror || totalerror,
+    Notify("There are some errors in your submission. Please review and correct the highlighted fields.", NotificationType.Error)
+);
+
+If(
+    !IsBlank(payeeData.Value) && !IsBlank(paymentRequestToData.Value) && !IsBlank(postalCodeData.Value) && !IsBlank(reasonForPaymentData.Value) && !IsBlank((totalData.Value)),
+    Navigate(printScreen)
+)
+
+
+### ON CHANGE ###
+
+If(
+    !IsBlank(totalData.Value),
+    Set(totalerror, false)
+)
+
+### BORDERCOLOR ###
+
+If(totalerror, 
+RGBA(255, 0, 0, 1),
+RGBA(0, 18, 107, 1))
+
+
+
+###ERROR TEXT ###
+
+Just put a variable name in Visible
+
+
+
