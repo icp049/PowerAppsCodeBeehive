@@ -1,0 +1,49 @@
+//This is a code for a button, for example a button that navigates to another screen. In this case, This is used to set data from a gallery onto a html table from screen 1 and screen 2. 
+//Put this code in a submit button
+
+
+ClearCollect(
+    GalleryCollection,
+    Gallery4_1.AllItems // Collect all items from InvoiceLines
+);
+Set(
+    varHTMLTable1,
+    "<div style='overflow-x:auto;'>
+     <p><strong>Date:</strong> " & dateData.SelectedDate & "</p>
+      <p><strong>Submitted By:</strong> " & submittedBy.Value & "</p>
+       <p><strong>Customer Name:</strong> " & customerNameData.Value & "</p>
+       <p><strong>Customer Address:</strong> " & customerAddressData.Value & "</p>
+
+
+    
+
+        <table border='1' style='width:100%; border-collapse: collapse; text-align:left; font-size:16px;'>
+            <tr style='background-color:#f2f2f2; font-weight:bold;'>
+                <th style='padding:8px; border:1px solid black;'>Item</th>
+                <th style='padding:8px; border:1px solid black;'>Amount</th>
+                <th style='padding:8px; border:1px solid black;'>GL Code</th>
+                <th style='padding:8px; border:1px solid black;'>Project Code</th>
+            </tr>" &
+
+        Concat(
+            GalleryCollection,
+            "<tr>
+                <td style='padding:8px; border:1px solid black;'>" & Item_1.Text & "</td>
+                <td style='padding:8px; border:1px solid black;'>" & Amt_1.Text & "</td>
+                <td style='padding:8px; border:1px solid black;'>" & GLcode_1.Text & "</td>
+                <td style='padding:8px; border:1px solid black;'>" & ProjectCode_1.Text & "</td>
+            </tr>"
+        ) & 
+
+    "</table>
+
+
+    <p><strong>Comments/Notes:</strong> " & commentData.Value & "</p>
+    
+    
+    
+    </div>"
+);
+
+
+Navigate(Screen2);
